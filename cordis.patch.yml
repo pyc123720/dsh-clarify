@@ -1,0 +1,21 @@
+# dsh-clarify — bundle patch
+#
+# One Loader row: the host half (`lib/index.js`) owns the mode, the requirement
+# card and the tools; the client half (`lib/client.js`) is the composer pill.
+# `dsh-client-modules` finds the `dsh.client` declaration in package.json and
+# serves that bundle, so one row composes both halves.
+#
+# The profile's own `cordis.patch.yml` can target this row id (`clarify`) to
+# disable the plugin or override its config — a rollback that needs no uninstall:
+#
+#   - id: clarify
+#     disabled: true
+#
+# or:
+#
+#   - id: clarify
+#     config:
+#       sectionOrder: 3050
+- insert:
+    - id: clarify
+      name: 'dsh-clarify'
